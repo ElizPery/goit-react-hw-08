@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import Loader from './components/Loader/Loader';
-import { ContactForm } from './components/ContactForm/ContactForm';
+import ContactForm from './components/ContactForm/ContactForm';
 import Filter from './components/Filter/Filter';
 import ContactList from './components/ContactList/ContactList';
 
 import { selectError, selectIsLoading } from './redux/selectors';
 import { fetchContacts } from './redux/operations';
 
-export function App() {
+function App() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -32,3 +32,5 @@ export function App() {
     </div>
   );
 }
+
+export default App;

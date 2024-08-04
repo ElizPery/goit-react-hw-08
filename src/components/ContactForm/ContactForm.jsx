@@ -8,7 +8,7 @@ import { selectContacts } from '../../redux/selectors';
 
 import css from './ContactForm.module.css';
 
-export function ContactForm() {
+function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -90,3 +90,5 @@ export function ContactForm() {
     </form>
   );
 }
+
+export default ContactForm;
