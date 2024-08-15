@@ -1,17 +1,23 @@
 .listItemOfContacts {
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    align-items: center;
     font-size: 18px;
-    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
-.nameOfContact {
-    display: inline;
+.iconOfInfo {
+    margin-right: 10px;
 }
 
 .deleteBtn {
     margin-left: 15px;
+    height: min-content;
     font-size: 15px;
     background-color: white;
-    border-color: red;
-    border-style: solid;
+    border: 2px solid red;
     border-radius: 5px;
 }
