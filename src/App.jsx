@@ -2,6 +2,7 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import LoginPage from './pages/LoginPage/LoginPage';
 // import { useDispatch, useSelector } from 'react-redux';
 
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       {/* <h1>Phonebook</h1>
       <ContactForm />

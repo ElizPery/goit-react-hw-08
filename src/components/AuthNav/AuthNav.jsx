@@ -12,9 +12,9 @@ export const AuthNav = () => {
       <NavLink className={buildLinkClass} to="/register">
         Register
       </NavLink>
-      {/* <NavLink className={css.link} to="/login">
+      <NavLink className={buildLinkClass} to="/login">
         Log In
-      </NavLink> */}
+      </NavLink>
     </div>
   );
 };

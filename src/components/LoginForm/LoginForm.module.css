@@ -1,0 +1,37 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: darkgreen;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.loginDataInput {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+.loginDataLabel {
+    margin-top: 11px;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+}
+
+.loginBtn {
+    width: 150px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: darkgreen;
+    color: white;
+    border-color: unset;
+    font-size: 15px;
+    padding: 5px;
+}
