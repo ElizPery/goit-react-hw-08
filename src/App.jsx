@@ -15,6 +15,7 @@ import { Layout } from './components/Layout';
 // import { fetchContacts } from './redux/operations';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 
 function App() {
   // const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Routes>
       {/* <h1>Phonebook</h1>
       <ContactForm />
