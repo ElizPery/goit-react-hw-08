@@ -10,7 +10,6 @@ export default function RegisterPage() {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-
   return (
     <div>
       <DocumentTitle>Registration</DocumentTitle>
