@@ -4,6 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 import css from './RegisterForm.module.css';
+import { useDispatch } from 'react-redux';
+import { register } from '../../redux/auth/operations';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -18,18 +20,20 @@ const ContactSchema = Yup.object().shape({
 });
 
 const initialValues = {
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
 };
 
 const RegisterForm = () => {
   const nameFieldId = useId();
-    const emailFieldId = useId();
-    const passwordFieldId = useId();
+  const emailFieldId = useId();
+  const passwordFieldId = useId();
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    // handleAddContact(values.name, values.number);
+    dispatch(register(values));
 
     actions.resetForm();
   };
