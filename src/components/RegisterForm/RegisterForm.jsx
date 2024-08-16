@@ -40,7 +40,7 @@ const RegisterForm = () => {
       onSubmit={handleSubmit}
       validationSchema={ContactSchema}
     >
-      <Form className={css.registerForm}>
+      <Form className={css.registerForm} autocomplete="off">
         <label htmlFor={nameFieldId} className={css.registerDataLabel}>
           Username
         </label>
@@ -49,6 +49,7 @@ const RegisterForm = () => {
           name="name"
           id={nameFieldId}
           className={css.registerDataInput}
+          autocomplete="off"
         />
         <ErrorMessage
           className={css.errorMessage}
@@ -64,6 +65,7 @@ const RegisterForm = () => {
           name="email"
           id={emailFieldId}
           className={css.registerDataInput}
+          autocomplete="off"
         />
         <ErrorMessage
           className={css.errorMessage}

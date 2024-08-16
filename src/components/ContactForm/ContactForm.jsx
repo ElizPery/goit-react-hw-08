@@ -72,6 +72,7 @@ const ContactForm = () => {
           name="name"
           id={nameFieldId}
           className={css.contactInputItem}
+          autocomplete="off"
         />
         <ErrorMessage
           className={css.errorMessage}

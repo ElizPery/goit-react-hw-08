@@ -21,6 +21,7 @@ const Filter = () => {
         value={filter}
         onChange={handleChangeData}
         className={css.contactFilterItem}
+        autoComplete="off"
         required
       />
     </label>
