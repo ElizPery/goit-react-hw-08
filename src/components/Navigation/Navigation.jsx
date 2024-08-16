@@ -12,6 +12,9 @@ const Navigation = () => {
         <NavLink className={buildLinkClass} to="/">
           Home
         </NavLink>
+        <NavLink className={buildLinkClass} to="/contacts">
+          Tasks
+        </NavLink>
       </nav>
     );
 }
