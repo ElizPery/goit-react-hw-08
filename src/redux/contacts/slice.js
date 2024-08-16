@@ -1,5 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { logOut } from "../auth/operations";
+import { fetchContacts } from "./operations";
+import { addContact } from "./operations";
+import { deleteContact } from "./operations";
 
 const handlePending = (state) => {
     state.isLoading = true;
@@ -15,31 +18,31 @@ const contactsSlice = createSlice({
     initialState: {
         items: [],
         isLoading: false,
-        error: null
+        error: null,
     },
     extraReducers: (builder) => {
         builder
-            .addCase("contacts/fetchAll/pending", handlePending)
-            .addCase("contacts/fetchAll/fulfilled", (state, action) => {
+            .addCase(fetchContacts.pending, handlePending)
+            .addCase(fetchContacts.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
                 state.items = action.payload;
             })
-            .addCase("contacts/fetchAll/rejected", handleRejected)
-            .addCase("contacts/addContact/pending", handlePending)
-            .addCase("contacts/addContact/fulfilled", (state, action) => {
+            .addCase(fetchContacts.rejected, handleRejected)
+            .addCase(addContact.pending, handlePending)
+            .addCase(addContact.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
                 state.items.unshift(action.payload);
             })
-            .addCase("contacts/addContact/rejected", handleRejected)
-            .addCase("contacts/deleteContact/pending", handlePending)
-            .addCase("contacts/deleteContact/fulfilled", (state, action) => {
+            .addCase(addContact.rejected, handleRejected)
+            .addCase(deleteContact.pending, handlePending)
+            .addCase(deleteContact.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
                 state.items = state.items.filter(contact => contact.id !== action.payload.id)
             })
-            .addCase("contacts/deleteContact/rejected", handleRejected)
+            .addCase(deleteContact.rejected, handleRejected)
             .addCase(logOut.fulfilled, (state) => {
                 state.items = [];
                 state.isLoading = false;
