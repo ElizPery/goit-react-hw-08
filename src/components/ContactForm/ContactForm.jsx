@@ -5,8 +5,8 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
-import { addContact } from '../../redux/operations';
-import { selectContacts } from '../../redux/selectors';
+import { addContact } from '../../redux/contacts/operations';
+import { selectContacts } from '../../redux/contacts/selectors';
 
 import css from './ContactForm.module.css';
 
