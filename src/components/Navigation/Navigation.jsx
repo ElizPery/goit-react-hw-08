@@ -13,7 +13,7 @@ const Navigation = () => {
           Home
         </NavLink>
         <NavLink className={buildLinkClass} to="/contacts">
-          Tasks
+          Contacts
         </NavLink>
       </nav>
     );
