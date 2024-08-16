@@ -5,13 +5,9 @@ axios.defaults.baseURL = "https://connections-api.goit.global/";
 
 export const register = createAsyncThunk(
     "auth/register",
-    async ({ name, email, password }, thunkAPI) => {
+    async (newUser, thunkAPI) => {
         try {
-            const response = await axios.post("/users/signup", {
-                name,
-                email,
-                password,
-            })
+            const response = await axios.post("/users/signup", newUser)
             return response.data;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.message);
