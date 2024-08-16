@@ -14,7 +14,7 @@ const ContactSchema = Yup.object().shape({
     .required('Required'),
     email: Yup.string().email('Must be a valid email!').required('Required'),
   password: Yup.string()
-    .min(3, 'Too Short!')
+    .min(7, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
 });
@@ -44,7 +44,7 @@ const RegisterForm = () => {
       onSubmit={handleSubmit}
       validationSchema={ContactSchema}
     >
-      <Form className={css.registerForm} autocomplete="off">
+      <Form className={css.registerForm} autoComplete="off">
         <label htmlFor={nameFieldId} className={css.registerDataLabel}>
           Username
         </label>
@@ -53,7 +53,7 @@ const RegisterForm = () => {
           name="name"
           id={nameFieldId}
           className={css.registerDataInput}
-          autocomplete="off"
+          autoComplete="off"
         />
         <ErrorMessage
           className={css.errorMessage}
@@ -69,7 +69,7 @@ const RegisterForm = () => {
           name="email"
           id={emailFieldId}
           className={css.registerDataInput}
-          autocomplete="off"
+          autoComplete="off"
         />
         <ErrorMessage
           className={css.errorMessage}
