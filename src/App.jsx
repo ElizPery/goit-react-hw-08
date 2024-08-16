@@ -2,7 +2,6 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
-import LoginPage from './pages/LoginPage/LoginPage';
 // import { useDispatch, useSelector } from 'react-redux';
 
 // import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -17,6 +16,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
+const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 
 function App() {
   // const dispatch = useDispatch();
