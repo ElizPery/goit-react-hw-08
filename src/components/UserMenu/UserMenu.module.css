@@ -7,3 +7,15 @@
 .username {
     font-weight: 700;
 }
+
+.deleteContact {
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+    color: #e84a5f;
+    border: 2px solid #e84a5f;
+        border-radius: 5px;
+    font-size: 15px;
+    padding: 5px;
+}
