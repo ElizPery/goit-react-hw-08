@@ -57,7 +57,7 @@ const LoginForm = () => {
           Password
         </label>
         <Field
-          type="text"
+          type="password"
           name="password"
           id={passwordFieldId}
           className={css.loginDataInput}
