@@ -35,7 +35,7 @@ const ContactForm = () => {
   const numberFieldId = useId();
 
 
-  const handleAddContact = (name, number) => {
+  const handleAddContact = async (name, number) => {
     if (
       contacts.find(
         contact =>
@@ -46,12 +46,15 @@ const ContactForm = () => {
       Notify.warning(`${name} or ${number} is already in contacts`);
       return;
     }
-
-    dispatch(addContact({ name, number }));
+    try {
+      await dispatch(addContact({ name, number })).unwrap();
+      Notify.success(`Contact added successfully!`);
+    } catch (e) {
+      Notify.error('Something went wrong!');
+    }
   };
 
   const handleSubmit = (values, actions) => {
-  
     handleAddContact(values.name, values.number);
 
     actions.resetForm();
@@ -72,7 +75,7 @@ const ContactForm = () => {
           name="name"
           id={nameFieldId}
           className={css.contactInputItem}
-          autocomplete="off"
+          autoComplete="off"
         />
         <ErrorMessage
           className={css.errorMessage}

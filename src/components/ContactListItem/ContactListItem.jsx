@@ -1,5 +1,7 @@
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 import { deleteContact } from '../../redux/contacts/operations';
 import css from './ContactListItem.module.css';
 import { FaUser } from 'react-icons/fa';
@@ -23,7 +25,14 @@ const ContactListItem = ({ id, name, number }) => {
       <button
         className={css.deleteBtn}
         type="button"
-        onClick={() => dispatch(deleteContact(id))}
+        onClick={async () => {
+          try {
+            await dispatch(deleteContact(id)).unwrap();
+            Notify.success(`Contact deleted successfully!`);
+          } catch (e) {
+            Notify.error('Something went wrong!');
+          }
+        }}
       >
         Delete
       </button>
