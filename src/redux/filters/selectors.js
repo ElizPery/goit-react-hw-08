@@ -7,6 +7,7 @@ export const selectVisibleContacts = createSelector(
     [ selectContacts, selectFilter],
     (items, filter) => {
     return items.filter(item => item.name.toLowerCase()
-        .includes(filter.toLowerCase()))
+        .includes(filter.toLowerCase()) || item.number
+        .includes(filter))
     }
 )
