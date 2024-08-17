@@ -3,10 +3,11 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from './redux/auth/operations';
-import { selectIsRefreshing } from './redux/auth/selectors';
+import {  selectIsRefreshing } from './redux/auth/selectors';
 import RestrictedRoute from './components/RestrictedRoute';
 import PrivateRoute from './components/PrivateRoute';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import RefreshingPage from './pages/RefreshingPage/RefreshingPage';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
@@ -21,9 +22,7 @@ function App() {
     dispatch(refreshUser())
   }, [dispatch])
 
-  return isRefreshing ? (
-    <div>Refreshing user please wait...</div>
-  ) : (
+  return isRefreshing ? <RefreshingPage /> : (
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
