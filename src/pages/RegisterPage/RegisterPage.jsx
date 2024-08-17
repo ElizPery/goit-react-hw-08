@@ -15,7 +15,12 @@ export default function RegisterPage() {
       <DocumentTitle>Registration</DocumentTitle>
       {isLoading && !error && <Loader />}
       {error && Notify.failure(`Something went wrong, please try again!`)}
-      {!isLoading && <RegisterForm />}
+      {!isLoading && (
+        <>
+          <h1>Register your account</h1>
+          <RegisterForm />
+        </>
+      )}
     </div>
   );
 }

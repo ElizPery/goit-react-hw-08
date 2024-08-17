@@ -15,7 +15,12 @@ export default function LoginPage() {
       <DocumentTitle>Log in</DocumentTitle>
       {isLoading && !error && <Loader />}
       {error && Notify.failure(`Something went wrong, please try again!`)}
-      {!isLoading && <LoginForm />}
+      {!isLoading && (
+        <>
+          <h1>Please log in</h1>
+          <LoginForm />
+        </>
+      )}
     </div>
   );
 }
